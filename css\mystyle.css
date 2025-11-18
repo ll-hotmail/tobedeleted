@@ -1,0 +1,31 @@
+/* Mock CSS from snippets depot */
+.red-bg-blue-text {
+    background-color: red;
+    color: blue;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 400px;
+}
+
+/* Hourglass animation container */
+.hourglass-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    margin: 20px auto;
+}
+
+/* Hidden class for content */
+.hidden {
+    display: none;
+}
+
+/* Visible class */
+.visible {
+    display: block;
+}
