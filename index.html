@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World - Snippet Assembly Demo</title>
+    <link rel="stylesheet" href="css/mystyle.css">
+</head>
+<body>
+    <!-- Hourglass animation container -->
+    <div id="hourglass" class="hourglass-container"></div>
+
+    <!-- Hello World content - initially hidden -->
+    <div id="hello-world" class="red-bg-blue-text hidden">
+        Hello World
+    </div>
+
+    <script src="js/myscript.js"></script>
+    <script>
+        // Page initialization and animation sequence
+        window.onload = function() {
+            const hourglassElement = document.getElementById('hourglass');
+            const helloWorldElement = document.getElementById('hello-world');
+
+            // Start hourglass animation
+            showTurningLine(hourglassElement);
+
+            // Show Hello World text after 3 seconds (when animation completes)
+            setTimeout(function() {
+                // Hide hourglass
+                hourglassElement.style.display = 'none';
+
+                // Show Hello World text with fade-in effect
+                helloWorldElement.classList.remove('hidden');
+                helloWorldElement.classList.add('visible');
+                helloWorldElement.style.animation = 'fadeIn 0.5s ease-in';
+            }, 3000);
+        };
+
+        // Add fadeIn animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(-20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
